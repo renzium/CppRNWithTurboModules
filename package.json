@@ -2,6 +2,10 @@
   "name": "CxxTurboModulesGuide",
   "version": "0.0.1",
   "private": true,
+  "description": "React Native with Cxx Turbo Native Modules",
+  "author": "Lawrence Ughonu lawrenceughonu@gmail.com(https://github.com/renzium)",
+  "license": "MIT",
+  "homepage": "https://github.com/renzium/#readme",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -32,5 +36,13 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+    "codegenConfig": {
+      "name": "AppSpecs",
+      "type": "all",
+      "jsSrcsDir": "tm",
+      "android": {
+        "javaPackageName": "com.facebook.fbreact.specs"
+      }
+    }
 }

@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import NativeSampleModule from '../tm/NativeSampleModule';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -62,6 +63,11 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const num1 = 2,
+    num2 = 3;
+
+  const str = 'The quick brown fox jumps over the lazy dog.';
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -76,20 +82,18 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="C++ TurboModule to reverse string">
+            <Text>{str}</Text>
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Reverse strings">
+            <Text>{NativeSampleModule.reverseString(str)}</Text>
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
+          <Section title="Using C++ TurboModule to sum two numbers">
+            <Text>
+              This is the sum of {num1} and {num2} is{' '}
+              {NativeSampleModule.addTwoNumbers(num1, num2)}.
+            </Text>
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
